@@ -1,0 +1,24 @@
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-family: "Coiny", system-ui;
+    font-size: 42px;
+}
+
+.fact {
+    font-size: 20px;
+    line-height: 1.4;
+    font-family: "Sono", monospace;
+}
+
+.tag {
+    text-transform: uppercase;
+    font-family: "Coiny", system-ui;
+    font-size: 14px;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Sono font-family: "Sono", monospace; Coiny font-family: "Coiny", system-ui; */
