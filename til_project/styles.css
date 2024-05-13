@@ -1,20 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    color: #fafaf9;
+    background-color: #292524;
+    font-family: "Sono", monospace;
+    padding: 40px;
+}
+
+.header {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 h1 {
     text-transform: uppercase;
     text-align: center;
     font-family: "Coiny", system-ui;
     font-size: 42px;
+    color: #932b8a;
+    color: #fafaf9;
+}
+
+.fact-form {
+    background-color: #44403c;
+    margin-bottom: 40px;
+    padding: 16px 40px;
+    text-align: center;
 }
 
 .fact {
     font-size: 20px;
     line-height: 1.4;
-    font-family: "Sono", monospace;
+    background-color: #44403c;
+    margin-bottom: 16px;
+    padding: 16px 24px;
 }
 
 .tag {
     text-transform: uppercase;
     font-family: "Coiny", system-ui;
     font-size: 14px;
+    color: #fafaf9;
+    padding: 3px 10px 0px 10px;
 }
 
 ul {
