@@ -1,14 +1,13 @@
 import './styles.css';
 import Header from "./Header"
 import CategoryFilter from './CategoryFilters';
-import NewFactForm from './Form';
+import NewFactForm from './NewFactForm';
 import FactList from './FactList';
 
 function App() {
   return (
     <>
       <Header />
-      <NewFactForm />
       
       <main className="main">
         <CategoryFilter />
