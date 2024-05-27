@@ -1,17 +1,56 @@
 import { useState } from "react";
 import CATEGORIES from "../utilities/categories";
 
-function NewFactForm() {
+function isValidHttpUrl(string) {
+  let url;
+  try {
+    url = new URL(string);
+  } catch (_) {
+    return false;
+  }
+  return url.protocol === "http:" || url.protocol === "https:";
+}
+
+function NewFactForm({ setFacts, setShowForm }) {
   const [text, setText] = useState("");
-  const [source, setSource] = useState("");
+  const [source, setSource] = useState("http://");
   const [category, setCategory] = useState("");
 
   // text.length is referring to the state of text
   const textLength = text.length;
 
   function handleSubmit(e) {
+    
+    // 1. Prevent browser from reloading
     e.preventDefault();
     console.log(text, source, category);
+
+    // 2. Check if data is valid, create new fact
+    if(text && text.length <= 200 && isValidHttpUrl(source) && category) {
+      console.log("We have liftoff!")
+      
+      // 3. Create a new fact object
+      const newFact = {
+        id: Math.round(Math.random() * 100000),
+        text,
+        source,
+        category,
+        votesInteresting: 0,
+        votesMindblowing: 0,
+        votesFalse: 0,
+        createdIn: new Date().getFullYear()
+      };
+      // 4. Add new fact to the UI
+      setFacts((facts) => [newFact, ...facts]);
+    }
+
+    // 5. Reset input fields
+    setText("");
+    setSource("");
+    setCategory("");
+    
+    // 6. Close the form
+    setShowForm(false);
   }
 
   return (

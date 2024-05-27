@@ -1,7 +1,7 @@
 import { useState } from "react"
 import NewFactForm from "./NewFactForm";
 
-function Header() {
+function Header({ setFacts }) {
   const [showForm, setShowForm] = useState(false);
 
   return (
@@ -17,7 +17,7 @@ function Header() {
             {showForm ? 'Close' : 'Share a Fact'}
         </button>
       </header>
-      { showForm ? <NewFactForm /> : null }
+      { showForm ? <NewFactForm setFacts={setFacts} setShowForm={setShowForm}/> : null }
     </>
   )
 }
