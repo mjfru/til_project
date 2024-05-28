@@ -1,5 +1,6 @@
 import { useState } from "react"
 import NewFactForm from "./NewFactForm";
+import Loader from './Loader';
 
 function Header({ setFacts }) {
   const [showForm, setShowForm] = useState(false);
